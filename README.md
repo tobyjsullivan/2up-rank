@@ -2,6 +2,15 @@
 
 Rank a list of options by presenting two at a time and choosing a favourite.
 
+Each option in the input file will be presented in a 2-up competition. Select your preference of the two.
+
+```
+$ node ./index.js examples/cars.txt
+? GM vs. Honda › - Use arrow-keys. Return to submit.
+❯   GM
+    Honda
+```
+
 ## Install
 
 *Prerequisites*
