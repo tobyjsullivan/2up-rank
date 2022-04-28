@@ -17,6 +17,8 @@ $ yarn install
 $ node ./index.js <inputFile>
 ```
 
+`inputFile` should be any text file which lists options one-per-line. (see `examples/cars.txt` for an example)
+
 ### Example
 
 ```
