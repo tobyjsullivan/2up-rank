@@ -30,7 +30,7 @@ async function main() {
     for (let j = i + 1; j < candidates.length; j++) {
       const a = candidates[i]
       const b = candidates[j]
-    
+
       // Randomize pair order
       const pair = [a, b].sort(() => (Math.random() > 0.5) ? 1 : -1)
       trials.push(pair)
@@ -42,6 +42,8 @@ async function main() {
 
   // Order: [winner, loser]
   const results = []
+  const trialCount = trials.length
+  let trialNum = 1
   for (const [a, b] of trials) {
     // Limit the number of contests
     if (results.length >= 50) {
@@ -51,12 +53,14 @@ async function main() {
     const {answer} = await prompts({
       type: 'select',
       name: 'answer',
-      message: `${a} vs. ${b}`,
+      message: `${a} vs. ${b} (${trialNum}/${trialCount})`,
       choices: [
         { value: a },
         { value: b },
       ]
     })
+
+    trialNum += 1
 
     if (answer === a) {
       results.push([a, b])
